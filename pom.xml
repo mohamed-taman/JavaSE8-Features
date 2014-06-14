@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>eg.com.tm.java.se</groupId>
+    <artifactId>Java8Features</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    <name>Java8Features</name>
+    <description>
+        Take a tour of the new features in Java SE 8, the platform designed to support faster and easier 
+        Java development. Learn about Project Lambda, a new syntax to support lambda expressions in Java 
+        code; the new Stream API for processing collections and managing parallel processing; the DateTime 
+        API for representing, managing and calculating date and time values; and Nashorn, a new engine to 
+        better support the use of JavaScript code with the Java Virtual Machine. 
+
+        Also covers some lesser-known features such as new methods for joining strings into lists.
+
+        Topics include: 
+
+        2- Working with lambda expressions and method references
+        3- Traversing collections with streams
+        4- Calculating timespans with the new DateTime API
+        5- Running JavaScript from Java with Nashorn
+    </description>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.12.1</version>
+                <configuration>
+                    <configLocation>config/sun_checks.xml</configLocation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>
