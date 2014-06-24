@@ -51,9 +51,9 @@ public class UseThreading {
 //        }).start();
         
         /* 
-         ************************************************
+         ******************************************
          * Using lambda exprssion anonymous class *
-         ************************************************
+         ******************************************
          */
         new Thread(() -> System.out.println("Hello Thread 2.")).start();
 
