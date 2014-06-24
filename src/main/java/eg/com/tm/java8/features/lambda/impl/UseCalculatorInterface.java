@@ -8,28 +8,32 @@
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package eg.com.tm.java8.features.overview;
+package eg.com.tm.java8.features.lambda.impl;
 
-import static java.lang.System.out;
+import eg.com.tm.java8.features.lambda.interfaces.CalculatorInterface;
+
 /**
  *
  * @author mohamed_taman
  */
-public class Print {
-    
+public class UseCalculatorInterface {
+
+   
     public static void main(String[] args) {
-       
-        Printable job = ()-> out.println("Java SE 8 is working, "
-                                        + "and Lambda Expresion too.");
         
-        job.print();
+        CalculatorInterface calc = (v1,v2) -> {
+            int result = v1 * v2;
+            System.out.println("The calculation result is: "+ result);
+        };
+        
+        calc.doCalculate(10, 5);
     }
     
 }
