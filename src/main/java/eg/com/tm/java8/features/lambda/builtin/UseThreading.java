@@ -16,6 +16,8 @@
  */
 package eg.com.tm.java8.features.lambda.builtin;
 
+import static java.lang.System.out;
+
 /**
  *
  * @author mohamed_taman
@@ -28,7 +30,7 @@ public class UseThreading {
 //
 //            @Override
 //            public void run() {
-//                System.out.println("Hello Thread 1.");
+//                out.println("Hello Thread 1.");
 //            }  
 //        };
 
@@ -37,7 +39,7 @@ public class UseThreading {
          * Using lambda expression inner classes *
          *****************************************
          */
-        Runnable thrd1 = () -> System.out.println("Hello Thread 1.");
+        Runnable thrd1 = () -> out.println("Hello Thread 1.");
 
         new Thread(thrd1).start();
 
@@ -46,7 +48,7 @@ public class UseThreading {
 //
 //            @Override
 //            public void run() {
-//                System.out.println("Hello Thread 2.");
+//                out.println("Hello Thread 2.");
 //            }
 //        }).start();
         
@@ -55,7 +57,7 @@ public class UseThreading {
          * Using lambda exprssion anonymous class *
          ******************************************
          */
-        new Thread(() -> System.out.println("Hello Thread 2.")).start();
+        new Thread(() -> out.println("Hello Thread 2.")).start();
 
     }
 }

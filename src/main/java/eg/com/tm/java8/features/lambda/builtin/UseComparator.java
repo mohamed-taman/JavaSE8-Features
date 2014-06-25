@@ -16,9 +16,10 @@
  */
 package eg.com.tm.java8.features.lambda.builtin;
 
+import static java.lang.System.out;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
+import static java.util.Collections.sort;
 import java.util.List;
 
 /**
@@ -37,9 +38,9 @@ public class UseComparator {
         values.add("EEE");
 
         //Case sensitive sort operation
-        Collections.sort(values);
+        sort(values);
 
-        System.out.println("Simple sort:");
+        out.println("Simple sort:");
         print(values);
 
         // Case insensetive sort operation with anonymous class
@@ -52,10 +53,9 @@ public class UseComparator {
 //        });
                 
         // Case insensetive sort operation with Lambda
-        Collections.sort(values,
-                        (String o1, String o2) -> o1.compareToIgnoreCase(o2));
+        sort(values,(o1, o2) -> o1.compareToIgnoreCase(o2));
 
-        System.out.println("Sort with Comparator");
+        out.println("Sort with Comparator");
         print(values);
     }
 
@@ -66,7 +66,7 @@ public class UseComparator {
     private static void print(Collection<String> data) {
 
         for (String value : data) {
-            System.out.println(value);
+             out.println(value);
         }
     }
 }

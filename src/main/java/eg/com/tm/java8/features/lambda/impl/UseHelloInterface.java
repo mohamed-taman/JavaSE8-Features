@@ -18,6 +18,7 @@
 package eg.com.tm.java8.features.lambda.impl;
 
 import eg.com.tm.java8.features.lambda.interfaces.HelloInterface;
+import static java.lang.System.out;
 
 /**
  *
@@ -27,7 +28,7 @@ public class UseHelloInterface {
     
     public static void main(String[] args) {
         
-        HelloInterface hello = ()-> System.out.println("Hello from Lambda expression");
+        HelloInterface hello = ()-> out.println("Hello from Lambda expression");
         
         hello.doGreeting();
         

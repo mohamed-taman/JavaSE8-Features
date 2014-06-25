@@ -18,6 +18,7 @@
 package eg.com.tm.java8.features.lambda.impl;
 
 import eg.com.tm.java8.features.lambda.interfaces.CalculatorInterface;
+import static java.lang.System.out;
 
 /**
  *
@@ -30,7 +31,7 @@ public class UseCalculatorInterface {
         
         CalculatorInterface calc = (v1,v2) -> {
             int result = v1 * v2;
-            System.out.println("The calculation result is: "+ result);
+            out.println("The calculation result is: "+ result);
         };
         
         calc.doCalculate(10, 5);
