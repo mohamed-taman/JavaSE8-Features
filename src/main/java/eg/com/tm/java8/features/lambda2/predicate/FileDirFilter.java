@@ -42,7 +42,7 @@ import static java.util.logging.Logger.getLogger;
 public class FileDirFilter {
 
     private static final Path path = get("src/main", "resources", "eg/com/tm/java8/features/lambda2");
-    
+
     private static final Logger logger = getLogger(FileDirFilter.class.getName());
 
     /**
@@ -119,8 +119,7 @@ public class FileDirFilter {
             }
             catch (IOException e) {
             }
-            System.out.println(currentTime);
-             System.out.println(modifiedTime);
+            
             return currentTime == modifiedTime;
         };
 
