@@ -88,10 +88,10 @@ public class FileDirFilter {
         filterPath(noFilter);
         out.println("--------------------------------------------");
 
-        Predicate<Path> dirFilter = (p) -> isDirectory(p, NOFOLLOW_LINKS);
-
         logger.info("Print dirs only");
-        filterPath(dirFilter);
+        
+        filterPath((p) -> isDirectory(p, NOFOLLOW_LINKS));
+        
         out.println("--------------------------------------------");
 
         Predicate<Path> hiddenFilter = (p) -> {
@@ -109,8 +109,9 @@ public class FileDirFilter {
         out.println("--------------------------------------------");
 
         Predicate<Path> timeFilter = (p) -> {
-            long currentTime = 0;
-            long modifiedTime = 0;
+            
+            long currentTime = 0, modifiedTime = 0;
+         
             try {
                 currentTime = fromMillis(currentTimeMillis()).to(DAYS);
                 modifiedTime = ((FileTime) getAttribute(p, "basic:lastModifiedTime",
@@ -124,7 +125,9 @@ public class FileDirFilter {
         };
 
         logger.info("Print today modified files/dirs only");
+        
         filterPath(timeFilter);
+        
         logger.info("--------------------------------------------");
 
     }
