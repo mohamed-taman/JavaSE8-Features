@@ -45,25 +45,13 @@ public class FileDirFilter {
 
     private static final Logger logger = getLogger(FileDirFilter.class.getName());
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-
-        predicateInInnerClass();
-        predicateWithLambda();
-
-    }
-
     private static void predicateInInnerClass() {
 
         Predicate<Path> dirsFilter = new Predicate<Path>() {
 
             @Override
             public boolean test(Path t) {
-
                 return isDirectory(t, NOFOLLOW_LINKS);
-
             }
         };
 
@@ -85,12 +73,12 @@ public class FileDirFilter {
         Predicate<Path> noFilter = (p) -> true;
 
         logger.info("All Path contents");
-        filterPath(noFilter);
+        doFilterAndPrintPath(noFilter);
         out.println("--------------------------------------------");
 
         logger.info("Print dirs only");
         
-        filterPath((p) -> isDirectory(p, NOFOLLOW_LINKS));
+        doFilterAndPrintPath((p) -> isDirectory(p, NOFOLLOW_LINKS));
         
         out.println("--------------------------------------------");
 
@@ -105,7 +93,7 @@ public class FileDirFilter {
         };
 
         logger.info("Print hidden files/dirs only");
-        filterPath(hiddenFilter);
+        doFilterAndPrintPath(hiddenFilter);
         out.println("--------------------------------------------");
 
         Predicate<Path> timeFilter = (p) -> {
@@ -126,13 +114,13 @@ public class FileDirFilter {
 
         logger.info("Print today modified files/dirs only");
         
-        filterPath(timeFilter);
+        doFilterAndPrintPath(timeFilter);
         
         logger.info("--------------------------------------------");
 
     }
 
-    private static void filterPath(Predicate<Path> pred) {
+    private static void doFilterAndPrintPath(Predicate<Path> pred) {
         try {
             newDirectoryStream(path).forEach(p -> {
                 if (pred.test(p)) {
@@ -143,6 +131,17 @@ public class FileDirFilter {
         catch (IOException ex) {
             logger.log(Level.SEVERE, null, ex);
         }
+    }
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        predicateInInnerClass();
+        
+        predicateWithLambda();
+
     }
 
 }

@@ -17,6 +17,7 @@
 package eg.com.tm.java8.features.lambda2;
 
 import java.io.IOException;
+import static java.lang.System.out;
 import static java.nio.file.Files.exists;
 import static java.nio.file.Files.readAllLines;
 import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
@@ -51,32 +52,29 @@ public class TraverseFileContent {
                 List<String> lines = readAllLines(path);
 
                 // Traversing with for each
-                for (String line : lines) {
-                    logger.info(line);
-                }
-
+                for (String line : lines)
+                    out.println(line);
+                
                 // Traversing with iterator
                 Iterator<String> itr = lines.iterator();
 
-                while (itr.hasNext()) {
-                    logger.info(itr.next());
-                }
-
+                while (itr.hasNext())
+                    out.println(itr.next());
+                
+                //------------------------------------
                 // Traversing with lambda new forEach
-                lines.forEach(line -> logger.info(line));
+                lines.forEach(line -> out.print(line));
 
                 // or with streams
-                lines.stream().forEach(line -> logger.info(line));
-                
+                lines.stream().forEach(line -> out.print(line));
+
             } else {
-                
+
                 logger.log(SEVERE, "{0} , Doesn't exists", path.toAbsolutePath());
             }
         }
         catch (IOException ex) {
             logger.severe(ex.getMessage());
         }
-
     }
-
 }
