@@ -50,5 +50,4 @@ public class SumAndAverage {
             System.out.println("Average was not calculated");
         }
     }
-
 }
