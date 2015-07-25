@@ -43,12 +43,12 @@ public class SumAndAverage {
         OptionalDouble avg = people.stream()
                 .mapToInt(p -> p.getAge())
                 .average();
+
         if (avg.isPresent()) {
             System.out.println("Average: " + avg.getAsDouble());
         } else {
             System.out.println("Average was not calculated");
         }
-
     }
 
 }
