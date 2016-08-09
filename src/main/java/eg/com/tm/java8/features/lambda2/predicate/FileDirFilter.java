@@ -41,9 +41,9 @@ import static java.util.logging.Logger.getLogger;
  */
 public class FileDirFilter {
 
-    private static final Path path = get("src/main", "resources", "eg/com/tm/java8/features/lambda2");
+    private static final Path PATH = get("src/main", "resources", "eg/com/tm/java8/features/lambda2");
 
-    private static final Logger logger = getLogger(FileDirFilter.class.getName());
+    private static final Logger LOGGER = getLogger(FileDirFilter.class.getName());
 
     private static void predicateInInnerClass() {
 
@@ -55,7 +55,7 @@ public class FileDirFilter {
             }
         };
 
-        try (DirectoryStream<Path> dirStream = newDirectoryStream(path)) {
+        try (DirectoryStream<Path> dirStream = newDirectoryStream(PATH)) {
             for (Path file : dirStream) {
                 if (dirsFilter.test(file)) {
                     out.println(file.getFileName());
@@ -63,7 +63,7 @@ public class FileDirFilter {
             }
         }
         catch (IOException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.SEVERE, null, ex);
         }
 
     }
@@ -72,11 +72,11 @@ public class FileDirFilter {
 
         Predicate<Path> noFilter = (p) -> true;
 
-        logger.info("All Path contents");
+        LOGGER.info("All Path contents");
         doFilterAndPrintPath(noFilter);
         out.println("--------------------------------------------");
 
-        logger.info("Print dirs only");
+        LOGGER.info("Print dirs only");
         
         doFilterAndPrintPath((p) -> isDirectory(p, NOFOLLOW_LINKS));
         
@@ -92,7 +92,7 @@ public class FileDirFilter {
             return hidden;
         };
 
-        logger.info("Print hidden files/dirs only");
+        LOGGER.info("Print hidden files/dirs only");
         doFilterAndPrintPath(hiddenFilter);
         out.println("--------------------------------------------");
 
@@ -112,24 +112,24 @@ public class FileDirFilter {
             return currentTime == modifiedTime;
         };
 
-        logger.info("Print today modified files/dirs only");
+        LOGGER.info("Print today modified files/dirs only");
         
         doFilterAndPrintPath(timeFilter);
         
-        logger.info("--------------------------------------------");
+        LOGGER.info("--------------------------------------------");
 
     }
 
     private static void doFilterAndPrintPath(Predicate<Path> pred) {
         try {
-            newDirectoryStream(path).forEach(p -> {
+            newDirectoryStream(PATH).forEach(p -> {
                 if (pred.test(p)) {
                     out.println(p.getFileName());
                 }
             });
         }
         catch (IOException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            LOGGER.log(Level.SEVERE, null, ex);
         }
     }
     
