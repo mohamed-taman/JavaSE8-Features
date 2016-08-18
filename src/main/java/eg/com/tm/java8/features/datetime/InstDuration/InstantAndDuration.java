@@ -37,6 +37,6 @@ public class InstantAndDuration {
         System.out.println(end);
         
         Duration elapsed = Duration.between(start, end);
-        System.out.println("Elapsed: "+ elapsed.toMillis() +" milliseconds");
+        System.out.println("Elapsed: "+ elapsed +" milliseconds");
     }
 }
