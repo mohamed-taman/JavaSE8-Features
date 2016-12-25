@@ -35,7 +35,7 @@ import static java.util.logging.Logger.getLogger;
  */
 public class TraverseFileContent {
 
-    private static final Logger logger = getLogger(TraverseFileContent.class.getName());
+    private static final Logger LOGGER = getLogger(TraverseFileContent.class.getName());
 
     /**
      * @param args the command line arguments
@@ -47,7 +47,7 @@ public class TraverseFileContent {
 
             if (exists(path, NOFOLLOW_LINKS)) {
 
-                logger.config(path.toAbsolutePath().toString());
+                LOGGER.config(path.toAbsolutePath().toString());
 
                 List<String> lines = readAllLines(path);
 
@@ -70,11 +70,11 @@ public class TraverseFileContent {
 
             } else {
 
-                logger.log(SEVERE, "{0} , Doesn't exists", path.toAbsolutePath());
+                LOGGER.log(SEVERE, "{0} , Doesn't exists", path.toAbsolutePath());
             }
         }
         catch (IOException ex) {
-            logger.severe(ex.getMessage());
+            LOGGER.severe(ex.getMessage());
         }
     }
 }

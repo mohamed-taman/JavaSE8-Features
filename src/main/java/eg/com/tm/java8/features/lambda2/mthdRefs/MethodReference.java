@@ -18,7 +18,6 @@ package eg.com.tm.java8.features.lambda2.mthdRefs;
 
 import java.io.IOException;
 import static java.lang.System.out;
-import java.nio.file.Files;
 import static java.nio.file.Files.exists;
 import static java.nio.file.Files.newDirectoryStream;
 import static java.nio.file.Files.notExists;
