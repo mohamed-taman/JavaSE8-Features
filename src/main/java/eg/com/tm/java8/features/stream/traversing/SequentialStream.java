@@ -35,7 +35,7 @@ public class SequentialStream {
         people.add(new Person("Doaa", 25));
         people.add(new Person("Malik", 6));
 
-        Predicate<Person> pred = (p) -> p.getAge() > 65;
+        Predicate<Person> pred = (p) -> p.getAge() == 6;
 
         displayPeople(people, pred);
 

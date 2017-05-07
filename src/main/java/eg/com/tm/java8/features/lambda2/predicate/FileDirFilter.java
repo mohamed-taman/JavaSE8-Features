@@ -138,7 +138,7 @@ public class FileDirFilter {
      */
     public static void main(String[] args) {
 
-        predicateInInnerClass();
+        //predicateInInnerClass();
 
         predicateWithLambda();
 

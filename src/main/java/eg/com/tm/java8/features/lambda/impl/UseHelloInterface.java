@@ -28,7 +28,7 @@ public class UseHelloInterface {
     
     public static void main(String[] args) {
         
-        HelloInterface hello = ()-> out.println("Hello from Lambda expression");
+        HelloInterface hello = () -> out.println("Hello from Lambda expression");
         
         hello.doGreeting();
         

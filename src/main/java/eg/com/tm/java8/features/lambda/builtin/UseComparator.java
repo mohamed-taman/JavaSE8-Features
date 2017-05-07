@@ -18,6 +18,7 @@ package eg.com.tm.java8.features.lambda.builtin;
 
 import static java.lang.System.out;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import static java.util.Collections.sort;
 import java.util.List;
@@ -30,13 +31,8 @@ public class UseComparator {
 
     public static void main(String[] args) {
 
-        List<String> values = new ArrayList();
-        values.add("AAA");
-        values.add("bbb");
-        values.add("CCC");
-        values.add("ddd");
-        values.add("EEE");
-
+        List<String> values = Arrays.asList("AAA","bbb","CCC","ddd","EEE");
+                
         //Case sensitive sort operation
         sort(values);
 
@@ -65,8 +61,6 @@ public class UseComparator {
      */
     private static void print(Collection<String> data) {
 
-        for (String value : data) {
-             out.println(value);
-        }
+        data.stream().forEach(s -> out.println(s));
     }
 }

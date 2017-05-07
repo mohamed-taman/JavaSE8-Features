@@ -18,6 +18,7 @@ package eg.com.tm.java8.features.lambda2.defltMthd;
 
 import static java.lang.System.out;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -32,15 +33,13 @@ public class DefaultMethod {
      */
     public static void main(String[] args) {
 
-        List<VehicleInterface> cars = new ArrayList<>(4);
+        List<VehicleInterface> cars = Arrays.asList(new Car("Mazda 3", "Mazda", 1600, 2008),
+                                                    new Car("Mazda 6", "Mazda", 2500, 2009),
+                                                    new Car("Mazda 2", "Mazda", 1400, 2008),
+                                                    new Car("Mazda X5", "Mazda", 3600, 2014));
 
-        cars.add(new Car("Mazda 3", "Mazda", 1600, 2008));
-        cars.add(new Car("Mazda 6", "Mazda", 2500, 2009));
-        cars.add(new Car("Mazda 2", "Mazda", 1400, 2008));
-        cars.add(new Car("Mazda X5", "Mazda", 3600, 2014));
-
-        Predicate<VehicleInterface> pred = (v) -> v.getCC() > 1900 & 
-                                                  v.getMakeYear() <= 2009;
+        Predicate<VehicleInterface> pred = (v) -> v.getCC() > 1900
+                & v.getMakeYear() <= 2009;
         cars.forEach(c -> {
             if (pred.test(c)) {
 //                String info = c.getName() 
