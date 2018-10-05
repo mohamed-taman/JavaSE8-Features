@@ -26,13 +26,13 @@
 
 
 # Don't track user specific configuration files
-nb-configuration.xml
-nbactions-release-profile.xml
-nb_jr_remoting.cfg
+# nb-configuration.xml
+# nbactions-release-profile.xml
+# nb_jr_remoting.cfg
 
 # Don't track any target or binary folders
-target
-nbproject
+# target
+# nbproject
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
