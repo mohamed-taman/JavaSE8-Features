@@ -24,6 +24,6 @@ package eg.com.tm.java8.features.lambda.interfaces;
 @FunctionalInterface
 public interface CalculatorInterface {
     
-    public void doCalculate(int value1, int value2);
+    void doCalculate(int value1, int value2);
     
 }

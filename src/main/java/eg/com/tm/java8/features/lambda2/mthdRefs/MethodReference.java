@@ -65,11 +65,11 @@ public class MethodReference {
     }
 
     private boolean isNotExists(Path p) {
-        return notExists(p, new LinkOption[]{NOFOLLOW_LINKS});
+        return notExists(p, NOFOLLOW_LINKS);
     }
 
     private boolean isExists(Path p) {
-        return exists(p, new LinkOption[]{NOFOLLOW_LINKS});
+        return exists(p, NOFOLLOW_LINKS);
     }
 
     public static void main(String[] args) {

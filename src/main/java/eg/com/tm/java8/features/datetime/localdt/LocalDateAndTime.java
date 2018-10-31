@@ -27,7 +27,7 @@ import java.time.LocalTime;
  */
 public class LocalDateAndTime {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         LocalDate currentDate = now();
         System.out.println(currentDate);

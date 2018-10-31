@@ -25,9 +25,9 @@ import java.util.Collection;
  */
 public class Task {
 
-    public static enum Status {
+    public enum Status {
         OPEN, CLOSED
-    };
+    }
 
     private final Status status;
 

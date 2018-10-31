@@ -24,5 +24,5 @@ package eg.com.tm.java8.features.overview;
 @FunctionalInterface
 public interface Printable {
     
-    public void print();
+    void print();
 }
