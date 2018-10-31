@@ -25,10 +25,14 @@
 *.rar
 
 
-# Don't track user specific configuration files
+# Don't track user specific NetBeans configuration files
 nb-configuration.xml
 nbactions-release-profile.xml
 nb_jr_remoting.cfg
+
+# Don't track user specific IntelliJ IDEA configuration files
+.idea
+Java8Features.iml
 
 # Don't track any target or binary folders
 target
